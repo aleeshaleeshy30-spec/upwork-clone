@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>UPWORK CLONE (FUNCTIONAL) – WEB-BASED</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upwork - Hire Freelancers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-2">
+                    <span class="text-3xl font-bold text-green-600">upwork</span>
+                </div>
+                <div class="hidden md:flex gap-6 text-sm font-medium">
+                    <a href="#" onclick="showSection('home')" class="hover:text-green-600">Find Talent</a>
+                    <a href="#" onclick="showSection('jobs')" class="hover:text-green-600">Find Work</a>
+                </div>
+            </div>
+
+            <div class="flex-1 max-w-xl mx-8">
+                <input id="search-input" type="text" placeholder="Search jobs or talent..." 
+                       class="w-full border border-gray-300 rounded-full px-6 py-3 focus:outline-none focus:border-green-500"
+                       onkeyup="if(event.key === 'Enter') searchContent()">
+            </div>
+
+            <div class="flex items-center gap-6">
+                <button onclick="showLoginModal()" id="login-btn" class="font-medium">Log in</button>
+                <button onclick="showPostJob()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-full font-medium">Post a Job</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section id="home-section" class="section">
+        <div class="bg-gradient-to-r from-green-600 to-teal-600 text-white py-20">
+            <div class="max-w-5xl mx-auto px-6 text-center">
+                <h1 class="text-5xl font-bold mb-6">Find the best talent for your project</h1>
+                <p class="text-xl mb-8">Hire expert freelancers for any job, online.</p>
+            </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <h2 class="text-2xl font-semibold mb-6">Popular Categories</h2>
+            <div id="categories" class="grid grid-cols-3 md:grid-cols-6 gap-4"></div>
+        </div>
+
+        <!-- Featured Jobs -->
+        <div class="max-w-7xl mx-auto px-6 pb-16">
+            <h2 class="text-2xl font-semibold mb-6">Featured Jobs</h2>
+            <div id="featured-jobs" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+    </section>
+
+    <!-- JOBS SECTION -->
+    <section id="jobs-section" class="section hidden max-w-7xl mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold mb-8">All Jobs</h2>
+        <div id="all-jobs" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+    </section>
+
+    <!-- Post Job Modal -->
+    <div id="post-job-modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+        <div class="bg-white rounded-3xl max-w-lg w-full mx-4 p-8">
+            <h2 class="text-2xl font-bold mb-6">Post a New Job</h2>
+            <input id="job-title" type="text" placeholder="Job Title" class="w-full p-4 border rounded-2xl mb-4">
+            <textarea id="job-desc" placeholder="Job Description" rows="5" class="w-full p-4 border rounded-2xl mb-6"></textarea>
+            <input id="job-budget" type="number" placeholder="Budget (₹)" class="w-full p-4 border rounded-2xl mb-6">
+            <button onclick="postJob()" class="w-full bg-green-600 text-white py-4 rounded-2xl font-semibold">Post Job</button>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="hidden fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+        <div class="bg-white rounded-3xl p-8 max-w-sm w-full mx-4">
+            <h2 class="text-2xl font-bold mb-6">Welcome to Upwork</h2>
+            <input id="login-email" type="text" placeholder="Email" class="w-full p-4 border rounded-2xl mb-4">
+            <button onclick="login()" class="w-full bg-green-600 text-white py-4 rounded-2xl font-semibold">Sign In</button>
+            <p onclick="closeLoginModal()" class="text-center mt-6 text-green-600 cursor-pointer">Close</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
